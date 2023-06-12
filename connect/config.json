@@ -1,0 +1,17 @@
+{
+    "name": "mongodb-connector",
+    "config": {
+        "connector.class": "io.debezium.connector.mongodb.MongoDbConnector",
+        "tasks.max": "3",
+        "mongodb.hosts": "router01:27017",
+        "mongodb.name": "dbserver1",
+        "database.dbname": "inventory",
+        "database.include.list": "inventory",
+        "collection.include.list": "inventory.fooevent",
+        "database.history.kafka.bootstrap.servers": "kafka:9092",
+        "key.converter": "org.apache.kafka.connect.json.JsonConverter",
+        "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+        "key.converter.schemas.enable": "false",
+        "value.converter.schemas.enable": "false"
+    }
+}
